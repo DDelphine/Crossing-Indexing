@@ -1,0 +1,296 @@
+test:	file format ELF64-x86-64
+
+.debug_line contents:
+debug_line[0x00000000]
+Line table prologue:
+    total_length: 0x000003b0
+         version: 2
+ prologue_length: 0x00000385
+ min_inst_length: 1
+ default_is_stmt: 1
+       line_base: -5
+      line_range: 14
+     opcode_base: 13
+standard_opcode_lengths[DW_LNS_copy] = 0
+standard_opcode_lengths[DW_LNS_advance_pc] = 1
+standard_opcode_lengths[DW_LNS_advance_line] = 1
+standard_opcode_lengths[DW_LNS_set_file] = 1
+standard_opcode_lengths[DW_LNS_set_column] = 1
+standard_opcode_lengths[DW_LNS_negate_stmt] = 0
+standard_opcode_lengths[DW_LNS_set_basic_block] = 0
+standard_opcode_lengths[DW_LNS_const_add_pc] = 0
+standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
+standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
+standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
+standard_opcode_lengths[DW_LNS_set_isa] = 1
+include_directories[  1] = "/usr/lib/gcc/x86_64-redhat-linux/9/include"
+include_directories[  2] = "/usr/include/bits"
+include_directories[  3] = "/usr/include/bits/types"
+include_directories[  4] = "/usr/include"
+include_directories[  5] = "/usr/include/sys"
+include_directories[  6] = "/usr/include/gnu"
+file_names[  1]:
+           name: "func.c"
+      dir_index: 0
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  2]:
+           name: "test.c"
+      dir_index: 0
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  3]:
+           name: "stddef.h"
+      dir_index: 1
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  4]:
+           name: "types.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  5]:
+           name: "struct_FILE.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  6]:
+           name: "FILE.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  7]:
+           name: "stdio.h"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  8]:
+           name: "sys_errlist.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  9]:
+           name: "stdc-predef.h"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 10]:
+           name: "libc-header-start.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 11]:
+           name: "features.h"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 12]:
+           name: "cdefs.h"
+      dir_index: 5
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 13]:
+           name: "wordsize.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 14]:
+           name: "long-double.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 15]:
+           name: "stubs.h"
+      dir_index: 6
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 16]:
+           name: "stubs-64.h"
+      dir_index: 6
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 17]:
+           name: "stdarg.h"
+      dir_index: 1
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 18]:
+           name: "timesize.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 19]:
+           name: "typesizes.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 20]:
+           name: "time64.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 21]:
+           name: "__fpos_t.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 22]:
+           name: "__mbstate_t.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 23]:
+           name: "__fpos64_t.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 24]:
+           name: "__FILE.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 25]:
+           name: "stdio_lim.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 26]:
+           name: "stdlib.h"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 27]:
+           name: "waitflags.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 28]:
+           name: "waitstatus.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 29]:
+           name: "floatn.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 30]:
+           name: "floatn-common.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 31]:
+           name: "types.h"
+      dir_index: 5
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 32]:
+           name: "clock_t.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 33]:
+           name: "clockid_t.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 34]:
+           name: "time_t.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 35]:
+           name: "timer_t.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 36]:
+           name: "stdint-intn.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 37]:
+           name: "endian.h"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 38]:
+           name: "endian.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 39]:
+           name: "byteswap.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 40]:
+           name: "uintn-identity.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 41]:
+           name: "select.h"
+      dir_index: 5
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 42]:
+           name: "select.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 43]:
+           name: "sigset_t.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 44]:
+           name: "__sigset_t.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 45]:
+           name: "struct_timeval.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 46]:
+           name: "struct_timespec.h"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 47]:
+           name: "pthreadtypes.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 48]:
+           name: "thread-shared-types.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 49]:
+           name: "pthreadtypes-arch.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 50]:
+           name: "alloca.h"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 51]:
+           name: "stdlib-float.h"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+
+Address            Line   Column File   ISA Discriminator Flags
+------------------ ------ ------ ------ --- ------------- -------------
+0x0000000000401126      4     21      1   0             0  is_stmt
+0x0000000000401132      5      5      1   0             0  is_stmt
+0x0000000000401148      6      1      1   0             0  is_stmt
+0x000000000040114b      5     12      2   0             0  is_stmt
+0x000000000040114f      6      2      2   0             0  is_stmt
+0x0000000000401159      7      1      2   0             0  is_stmt
+0x000000000040115c      7      1      2   0             0  is_stmt end_sequence
