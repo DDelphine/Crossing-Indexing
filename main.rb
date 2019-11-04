@@ -53,14 +53,40 @@ lookup_table.each do |key, value|
   new_lookup_table[key] = new_value
 end
 
+=begin
 new_lookup_table.each do |k, v|
   puts "#{k} \n"
   v.each do |key, value|
-    puts "#{key}: #{value} \n"
+    puts "#{key}- #{value} \n"
   end
 end
-
+=end
+f = false
 File.readlines('ASSEMBLY').each do |line|
-  new_loopup_table.each do |key, value|
-    if line.match()
+  tmp = line.strip
+  arr = line.gsub(/\s/m, ' ').strip.split(" ")
+  addr = arr[0] 
+  if !addr.nil? == true && addr.match(/:/)
+    addr = addr.gsub(/:/, '')
+  new_lookup_table.each do |key, value|
+    asmly_addr = value.keys
+    asmly_addr.each do |item|
+      if item.kind_of?(Array)
+        if item[0].match(/#{addr}/) 
+          puts "#{tmp}                               #{value[item]}"
+          f = true
+        end
+      else
+        if item.match(/#{addr}/)
+          puts "#{tmp}                               #{value[item]}"
+          f = true
+        end 
+      end
+    end
+  end
+  end 
+ if f == false
+   puts line
+ end 
+ f = false
 end
