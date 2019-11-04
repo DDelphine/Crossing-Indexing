@@ -60,6 +60,7 @@ new_lookup_table.each do |k, v|
     puts "#{key}- #{value} \n"
   end
 end
+<<<<<<< HEAD
 =end
 f = false
 File.readlines('ASSEMBLY').each do |line|
@@ -90,3 +91,7 @@ File.readlines('ASSEMBLY').each do |line|
  end 
  f = false
 end
+#File.readlines('ASSEMBLY').each do |line|
+#  new_loopup_table.each do |key, value|
+#    if line.match()
+#end
