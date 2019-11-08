@@ -1,13 +1,16 @@
 #this part generates a lookup_table
 #lookup_table stores {file_1: {assembly_addr_1=>source_code_line_1, assembly_addr_2=>source_code_line_2 ...}
 #                     file_2: {assembly_addr_1=>source_code_line_1, assembly_addr_2=>source_code_line_2... }
-#                     ......}
+# 
+#
+#                    ......}
+def readdwarf(dwarf_file)
 lookup_table = {}
 file_indexes = []
 file_names = []
 flag = false
 
-File.readlines('DWARF').each do |line|
+dwarf_file.each_line do |line|
     if flag == false
       if line.match(/file_names/)
         file_index = line.scan(/\d/).join('').to_s
@@ -45,11 +48,12 @@ lookup_table.each do |key, value|
   new_value = {}
   value.each do |k, v|
     if value.select{|k_1, v_1| v_1 == v}.keys.length > 1
-      new_value[value.select{|k_1, v_1| v_1 == v}.keys] = IO.readlines(key)[v.to_i-1]
+      new_value[value.select{|k_1, v_1| v_1 == v}.keys] = value[k]+". "+IO.readlines(key)[v.to_i-1]
     else
-      new_value[k] = IO.readlines(key)[v.to_i-1]
+      new_value[k] = value[k] +". "+ IO.readlines(key)[v.to_i-1]
     end
   end
+  new_value = new_value
   new_lookup_table[key] = new_value
 end
 
@@ -62,7 +66,9 @@ new_lookup_table.each do |k, v|
 end
 <<<<<<< HEAD
 =end
+=begin
 f = false
+
 File.readlines('ASSEMBLY').each do |line|
   tmp = line.strip
   arr = line.gsub(/\s/m, ' ').strip.split(" ")
@@ -74,12 +80,13 @@ File.readlines('ASSEMBLY').each do |line|
     asmly_addr.each do |item|
       if item.kind_of?(Array)
         if item[0].match(/#{addr}/) 
-          puts "#{tmp}                               #{value[item]}"
+          puts "#{tmp}                               #{'c:'+value[item]}"
+
           f = true
         end
       else
         if item.match(/#{addr}/)
-          puts "#{tmp}                               #{value[item]}"
+          puts "#{tmp}                               #{'c:'+value[item]}"
           f = true
         end 
       end
@@ -91,6 +98,10 @@ File.readlines('ASSEMBLY').each do |line|
  end 
  f = false
 end
+=end
+return new_lookup_table
+end
+
 #File.readlines('ASSEMBLY').each do |line|
 #  new_loopup_table.each do |key, value|
 #    if line.match()
