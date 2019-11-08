@@ -4,8 +4,10 @@
 # 
 #
 #                    ......}
-def readdwarf(dwarf_file)
+new_lookup_table = {}
 lookup_table = {}
+def readdwarf(dwarf_file)
+#lookup_table = {}
 file_indexes = []
 file_names = []
 flag = false
@@ -42,7 +44,7 @@ end
 #this part processes the lookup_table which is generated from the previous part, replaces the line_number by the source code in the corresponding source file. If multiple assembly code lines refer to the same source code line, then grouping all the assembly code lines together to form a new key, and the value is the source code line. 
 #e.g., lookup_table {file_1: {0x0001=>1, 0x0002=>2, 0x0003=>2}}
 #      new_lookup_table {file_1: {0x0001=>first source code line, [0x0002, 0x0003]=>second source code line}} 
-new_lookup_table = {}
+#new_lookup_table = {}
 lookup_table.each do |key, value|
   #puts "#{key}: #{value}"
   new_value = {}
@@ -102,6 +104,28 @@ end
 return new_lookup_table
 end
 
+unused_source_code = {}
+
+def unused_code(table)
+  lookup_table.each do |file, code_line_number|
+    line_num = 0
+    source_code = File.open(file).read
+    source_code.gsub!(/\r\n?/, "\n")
+    source_code.each_line do |code|
+      line_num = line_num + 1
+      if !code_line_number.values.include? line_number
+        if unused_source_code.has_key?(file)
+          value = unused_source_code[file]
+          value[line_num] = code
+          unused_source_code[file] = value
+        else
+          unused_source_code[file] = {line_num => code}
+        end
+      end
+    end
+  end
+  return unused_source_code
+end
 #File.readlines('ASSEMBLY').each do |line|
 #  new_loopup_table.each do |key, value|
 #    if line.match()
