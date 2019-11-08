@@ -1,0 +1,206 @@
+<!DOCTYPE html> 
+    <html>
+            <h1>Cross Indexing<h1>
+            <h2>CSC 254 Assignment 4</h2>
+            <h3>Mingzhe Du & Advaith Suresh</h3>
+            <style>
+            table {
+            border-collapse: collapse;
+            width: 100%;
+            }
+            th, td {
+            text-align: left;
+            padding: 8px;
+            }
+            tr:nth-child(odd) {background-color: #f2f2f2;}
+</style>
+            <div>  <table style=i"float: left">
+    <tr>
+    	<th>Assembly</th>
+        <th>Source</th>
+    </tr><tr><td>test:     file format elf64-x86-64
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>Disassembly of section .init:
+</td></tr><tr><td>
+</td></tr><tr><td>0000000000401000 &lt_init&gt:
+</td></tr><tr><td>  401000:	f3 0f 1e fa          	endbr64 
+</td></tr><tr><td>  401004:	48 83 ec 08          	sub    $0x8,%rsp
+</td></tr><tr><td>  401008:	48 8b 05 e9 2f 00 00 	mov    0x2fe9(%rip),%rax        # 403ff8 &lt__gmon_start__&gt
+</td></tr><tr><td>  40100f:	48 85 c0             	test   %rax,%rax
+</td></tr><tr><td>  401012:	74 02                	je     401016 &lt_init+0x16&gt
+</td></tr><tr><td>  401014:	ff d0                	callq  *%rax
+</td></tr><tr><td>  401016:	48 83 c4 08          	add    $0x8,%rsp
+</td></tr><tr><td>  40101a:	c3                   	retq   
+</td></tr><tr><td>
+</td></tr><tr><td>Disassembly of section .plt:
+</td></tr><tr><td>
+</td></tr><tr><td>0000000000401020 &lt.plt&gt:
+</td></tr><tr><td>  401020:	ff 35 e2 2f 00 00    	pushq  0x2fe2(%rip)        # 404008 &lt_GLOBAL_OFFSET_TABLE_+0x8&gt
+</td></tr><tr><td>  401026:	ff 25 e4 2f 00 00    	jmpq   *0x2fe4(%rip)        # 404010 &lt_GLOBAL_OFFSET_TABLE_+0x10&gt
+</td></tr><tr><td>  40102c:	0f 1f 40 00          	nopl   0x0(%rax)
+</td></tr><tr><td>
+</td></tr><tr><td>0000000000401030 &ltprintf@plt&gt:
+</td></tr><tr><td>  401030:	ff 25 e2 2f 00 00    	jmpq   *0x2fe2(%rip)        # 404018 &ltprintf@GLIBC_2.2.5&gt
+</td></tr><tr><td>  401036:	68 00 00 00 00       	pushq  $0x0
+</td></tr><tr><td>  40103b:	e9 e0 ff ff ff       	jmpq   401020 &lt.plt&gt
+</td></tr><tr><td>
+</td></tr><tr><td>Disassembly of section .text:
+</td></tr><tr><td>
+</td></tr><tr><td>0000000000401040 &lt_start&gt:
+</td></tr><tr><td>  401040:	f3 0f 1e fa          	endbr64 
+</td></tr><tr><td>  401044:	31 ed                	xor    %ebp,%ebp
+</td></tr><tr><td>  401046:	49 89 d1             	mov    %rdx,%r9
+</td></tr><tr><td>  401049:	5e                   	pop    %rsi
+</td></tr><tr><td>  40104a:	48 89 e2             	mov    %rsp,%rdx
+</td></tr><tr><td>  40104d:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+</td></tr><tr><td>  401051:	50                   	push   %rax
+</td></tr><tr><td>  401052:	54                   	push   %rsp
+</td></tr><tr><td>  401053:	49 c7 c0 d0 11 40 00 	mov    $0x4011d0,%r8
+</td></tr><tr><td>  40105a:	48 c7 c1 60 11 40 00 	mov    $0x401160,%rcx
+</td></tr><tr><td>  401061:	48 c7 c7 4b 11 40 00 	mov    $0x40114b,%rdi
+</td></tr><tr><td>  401068:	ff 15 82 2f 00 00    	callq  *0x2f82(%rip)        # 403ff0 &lt__libc_start_main@GLIBC_2.2.5&gt
+</td></tr><tr><td>  40106e:	f4                   	hlt    
+</td></tr><tr><td>
+</td></tr><tr><td>000000000040106f &lt.annobin_init.c&gt:
+</td></tr><tr><td>  40106f:	90                   	nop
+</td></tr><tr><td>
+</td></tr><tr><td>0000000000401070 &lt_dl_relocate_static_pie&gt:
+</td></tr><tr><td>  401070:	f3 0f 1e fa          	endbr64 
+</td></tr><tr><td>  401074:	c3                   	retq   
+</td></tr><tr><td>
+</td></tr><tr><td>0000000000401075 &lt.annobin__dl_relocate_static_pie.end&gt:
+</td></tr><tr><td>  401075:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+</td></tr><tr><td>  40107c:	00 00 00 
+</td></tr><tr><td>  40107f:	90                   	nop
+</td></tr><tr><td>
+</td></tr><tr><td>0000000000401080 &ltderegister_tm_clones&gt:
+</td></tr><tr><td>  401080:	b8 28 40 40 00       	mov    $0x404028,%eax
+</td></tr><tr><td>  401085:	48 3d 28 40 40 00    	cmp    $0x404028,%rax
+</td></tr><tr><td>  40108b:	74 13                	je     4010a0 &ltderegister_tm_clones+0x20&gt
+</td></tr><tr><td>  40108d:	b8 00 00 00 00       	mov    $0x0,%eax
+</td></tr><tr><td>  401092:	48 85 c0             	test   %rax,%rax
+</td></tr><tr><td>  401095:	74 09                	je     4010a0 &ltderegister_tm_clones+0x20&gt
+</td></tr><tr><td>  401097:	bf 28 40 40 00       	mov    $0x404028,%edi
+</td></tr><tr><td>  40109c:	ff e0                	jmpq   *%rax
+</td></tr><tr><td>  40109e:	66 90                	xchg   %ax,%ax
+</td></tr><tr><td>  4010a0:	c3                   	retq   
+</td></tr><tr><td>  4010a1:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+</td></tr><tr><td>  4010a8:	00 00 00 00 
+</td></tr><tr><td>  4010ac:	0f 1f 40 00          	nopl   0x0(%rax)
+</td></tr><tr><td>
+</td></tr><tr><td>00000000004010b0 &ltregister_tm_clones&gt:
+</td></tr><tr><td>  4010b0:	be 28 40 40 00       	mov    $0x404028,%esi
+</td></tr><tr><td>  4010b5:	48 81 ee 28 40 40 00 	sub    $0x404028,%rsi
+</td></tr><tr><td>  4010bc:	48 89 f0             	mov    %rsi,%rax
+</td></tr><tr><td>  4010bf:	48 c1 ee 3f          	shr    $0x3f,%rsi
+</td></tr><tr><td>  4010c3:	48 c1 f8 03          	sar    $0x3,%rax
+</td></tr><tr><td>  4010c7:	48 01 c6             	add    %rax,%rsi
+</td></tr><tr><td>  4010ca:	48 d1 fe             	sar    %rsi
+</td></tr><tr><td>  4010cd:	74 11                	je     4010e0 &ltregister_tm_clones+0x30&gt
+</td></tr><tr><td>  4010cf:	b8 00 00 00 00       	mov    $0x0,%eax
+</td></tr><tr><td>  4010d4:	48 85 c0             	test   %rax,%rax
+</td></tr><tr><td>  4010d7:	74 07                	je     4010e0 &ltregister_tm_clones+0x30&gt
+</td></tr><tr><td>  4010d9:	bf 28 40 40 00       	mov    $0x404028,%edi
+</td></tr><tr><td>  4010de:	ff e0                	jmpq   *%rax
+</td></tr><tr><td>  4010e0:	c3                   	retq   
+</td></tr><tr><td>  4010e1:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+</td></tr><tr><td>  4010e8:	00 00 00 00 
+</td></tr><tr><td>  4010ec:	0f 1f 40 00          	nopl   0x0(%rax)
+</td></tr><tr><td>
+</td></tr><tr><td>00000000004010f0 &lt__do_global_dtors_aux&gt:
+</td></tr><tr><td>  4010f0:	f3 0f 1e fa          	endbr64 
+</td></tr><tr><td>  4010f4:	80 3d 29 2f 00 00 00 	cmpb   $0x0,0x2f29(%rip)        # 404024 &lt_edata&gt
+</td></tr><tr><td>  4010fb:	75 13                	jne    401110 &lt__do_global_dtors_aux+0x20&gt
+</td></tr><tr><td>  4010fd:	55                   	push   %rbp
+</td></tr><tr><td>  4010fe:	48 89 e5             	mov    %rsp,%rbp
+</td></tr><tr><td>  401101:	e8 7a ff ff ff       	callq  401080 &ltderegister_tm_clones&gt
+</td></tr><tr><td>  401106:	c6 05 17 2f 00 00 01 	movb   $0x1,0x2f17(%rip)        # 404024 &lt_edata&gt
+</td></tr><tr><td>  40110d:	5d                   	pop    %rbp
+</td></tr><tr><td>  40110e:	c3                   	retq   
+</td></tr><tr><td>  40110f:	90                   	nop
+</td></tr><tr><td>  401110:	c3                   	retq   
+</td></tr><tr><td>  401111:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+</td></tr><tr><td>  401118:	00 00 00 00 
+</td></tr><tr><td>  40111c:	0f 1f 40 00          	nopl   0x0(%rax)
+</td></tr><tr><td>
+</td></tr><tr><td>0000000000401120 &ltframe_dummy&gt:
+</td></tr><tr><td>  401120:	f3 0f 1e fa          	endbr64 
+</td></tr><tr><td>  401124:	eb 8a                	jmp    4010b0 &ltregister_tm_clones&gt
+</td></tr><tr><td>
+</td></tr><tr><td>0000000000401126 &ltprint&gt:
+</td></tr><tr><td>401126:	55                   	push   %rbp</td><td>4. void printa(char * s){
+</td></tr><tr><td>  401127:	48 89 e5             	mov    %rsp,%rbp
+</td></tr><tr><td>  40112a:	48 83 ec 10          	sub    $0x10,%rsp
+</td></tr><tr><td>  40112e:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+</td></tr><tr><td>401132:	48 8b 45 f8          	mov    -0x8(%rbp),%rax</td><td>5.     printf("%s", s);
+</td></tr><tr><td>  401136:	48 89 c6             	mov    %rax,%rsi
+</td></tr><tr><td>  401139:	bf 10 20 40 00       	mov    $0x402010,%edi
+</td></tr><tr><td>  40113e:	b8 00 00 00 00       	mov    $0x0,%eax
+</td></tr><tr><td>  401143:	e8 e8 fe ff ff       	callq  401030 &ltprintf@plt&gt
+</td></tr><tr><td>401148:	90                   	nop</td><td>6. }
+</td></tr><tr><td>  401149:	c9                   	leaveq 
+</td></tr><tr><td>  40114a:	c3                   	retq   
+</td></tr><tr><td>
+</td></tr><tr><td>000000000040114b &ltmain&gt:
+</td></tr><tr><td>40114b:	55                   	push   %rbp</td><td>5. void main(){
+</td></tr><tr><td>  40114c:	48 89 e5             	mov    %rsp,%rbp
+</td></tr><tr><td>40114f:	bf 13 20 40 00       	mov    $0x402013,%edi</td><td>6. 	printa("hello");
+</td></tr><tr><td>  401154:	e8 cd ff ff ff       	callq  401126 &ltprint&gt
+</td></tr><tr><td>401159:	90                   	nop</td><td>7. }
+</td></tr><tr><td>  40115a:	5d                   	pop    %rbp
+</td></tr><tr><td>  40115b:	c3                   	retq   
+</td></tr><tr><td>  40115c:	0f 1f 40 00          	nopl   0x0(%rax)
+</td></tr><tr><td>
+</td></tr><tr><td>0000000000401160 &lt__libc_csu_init&gt:
+</td></tr><tr><td>  401160:	f3 0f 1e fa          	endbr64 
+</td></tr><tr><td>  401164:	41 57                	push   %r15
+</td></tr><tr><td>  401166:	4c 8d 3d a3 2c 00 00 	lea    0x2ca3(%rip),%r15        # 403e10 &lt__frame_dummy_init_array_entry&gt
+</td></tr><tr><td>  40116d:	41 56                	push   %r14
+</td></tr><tr><td>  40116f:	49 89 d6             	mov    %rdx,%r14
+</td></tr><tr><td>  401172:	41 55                	push   %r13
+</td></tr><tr><td>  401174:	49 89 f5             	mov    %rsi,%r13
+</td></tr><tr><td>  401177:	41 54                	push   %r12
+</td></tr><tr><td>  401179:	41 89 fc             	mov    %edi,%r12d
+</td></tr><tr><td>  40117c:	55                   	push   %rbp
+</td></tr><tr><td>  40117d:	48 8d 2d 94 2c 00 00 	lea    0x2c94(%rip),%rbp        # 403e18 &lt__init_array_end&gt
+</td></tr><tr><td>  401184:	53                   	push   %rbx
+</td></tr><tr><td>  401185:	4c 29 fd             	sub    %r15,%rbp
+</td></tr><tr><td>  401188:	48 83 ec 08          	sub    $0x8,%rsp
+</td></tr><tr><td>  40118c:	e8 6f fe ff ff       	callq  401000 &lt_init&gt
+</td></tr><tr><td>  401191:	48 c1 fd 03          	sar    $0x3,%rbp
+</td></tr><tr><td>  401195:	74 1f                	je     4011b6 &lt__libc_csu_init+0x56&gt
+</td></tr><tr><td>  401197:	31 db                	xor    %ebx,%ebx
+</td></tr><tr><td>  401199:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+</td></tr><tr><td>  4011a0:	4c 89 f2             	mov    %r14,%rdx
+</td></tr><tr><td>  4011a3:	4c 89 ee             	mov    %r13,%rsi
+</td></tr><tr><td>  4011a6:	44 89 e7             	mov    %r12d,%edi
+</td></tr><tr><td>  4011a9:	41 ff 14 df          	callq  *(%r15,%rbx,8)
+</td></tr><tr><td>  4011ad:	48 83 c3 01          	add    $0x1,%rbx
+</td></tr><tr><td>  4011b1:	48 39 dd             	cmp    %rbx,%rbp
+</td></tr><tr><td>  4011b4:	75 ea                	jne    4011a0 &lt__libc_csu_init+0x40&gt
+</td></tr><tr><td>  4011b6:	48 83 c4 08          	add    $0x8,%rsp
+</td></tr><tr><td>  4011ba:	5b                   	pop    %rbx
+</td></tr><tr><td>  4011bb:	5d                   	pop    %rbp
+</td></tr><tr><td>  4011bc:	41 5c                	pop    %r12
+</td></tr><tr><td>  4011be:	41 5d                	pop    %r13
+</td></tr><tr><td>  4011c0:	41 5e                	pop    %r14
+</td></tr><tr><td>  4011c2:	41 5f                	pop    %r15
+</td></tr><tr><td>  4011c4:	c3                   	retq   
+</td></tr><tr><td>  4011c5:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+</td></tr><tr><td>  4011cc:	00 00 00 00 
+</td></tr><tr><td>
+</td></tr><tr><td>00000000004011d0 &lt__libc_csu_fini&gt:
+</td></tr><tr><td>  4011d0:	f3 0f 1e fa          	endbr64 
+</td></tr><tr><td>  4011d4:	c3                   	retq   
+</td></tr><tr><td>
+</td></tr><tr><td>Disassembly of section .fini:
+</td></tr><tr><td>
+</td></tr><tr><td>00000000004011d8 &lt_fini&gt:
+</td></tr><tr><td>  4011d8:	f3 0f 1e fa          	endbr64 
+</td></tr><tr><td>  4011dc:	48 83 ec 08          	sub    $0x8,%rsp
+</td></tr><tr><td>  4011e0:	48 83 c4 08          	add    $0x8,%rsp
+</td></tr><tr><td>  4011e4:	c3                   	retq  
+</td></tr></div>
+        </body>
+    </html>
