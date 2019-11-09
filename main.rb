@@ -1,16 +1,16 @@
-#this part generates a lookup_table
-#lookup_table stores {file_1: {assembly_addr_1=>source_code_line_1, assembly_addr_2=>source_code_line_2 ...}
-#                     file_2: {assembly_addr_1=>source_code_line_1, assembly_addr_2=>source_code_line_2... }
-# 
-#
-#                    ......}
-#
+#this function is used to process the objdump output and the llvm-dwarfdump output
+#it returns two tables, the first table is new_lookup_table, which stores and source code file name, the assembly addresses and the corresponding source code.
 def readdwarf(dwarf_file)
 new_lookup_table = {}
 file_indexes = []
 file_names = []
 flag = false
 lookup_table = {}
+
+#this part generates the temporary lookup_table which looks like
+# {file_1: {assembly_addr_1=>source_code_line_1, assembly_addr_2=>source_code_line_2 ...}
+#  file_2: {assembly_addr_1=>source_code_line_1, assembly_addr_2=>source_code_line_2... }
+#  ......}
 dwarf_file.each_line do |line|
     if flag == false
       if line.match(/file_names/)
@@ -56,7 +56,7 @@ lookup_table.each do |key, value|
   new_value = new_value
   new_lookup_table[key] = new_value
 end
-
+#this part generate a unused_source_code table, which contains source code that doesn’t have corresponding assembly code
 unused_source_code = {}
 lookup_table.each do |file, code_line_number|
   line_num = 0
