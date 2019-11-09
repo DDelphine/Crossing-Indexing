@@ -4,14 +4,14 @@
 # 
 #
 #                    ......}
-new_lookup_table = {}
-lookup_table = {}
+#
 def readdwarf(dwarf_file)
+  new_lookup_table = {}
 #lookup_table = {}
 file_indexes = []
 file_names = []
 flag = false
-
+lookup_table = {}
 dwarf_file.each_line do |line|
     if flag == false
       if line.match(/file_names/)
@@ -70,7 +70,6 @@ end
 =end
 =begin
 f = false
-
 File.readlines('ASSEMBLY').each do |line|
   tmp = line.strip
   arr = line.gsub(/\s/m, ' ').strip.split(" ")
@@ -83,7 +82,6 @@ File.readlines('ASSEMBLY').each do |line|
       if item.kind_of?(Array)
         if item[0].match(/#{addr}/) 
           puts "#{tmp}                               #{'c:'+value[item]}"
-
           f = true
         end
       else
@@ -101,19 +99,16 @@ File.readlines('ASSEMBLY').each do |line|
  f = false
 end
 =end
-return new_lookup_table
-end
 
 unused_source_code = {}
 
-def unused_code(table)
   lookup_table.each do |file, code_line_number|
     line_num = 0
     source_code = File.open(file).read
     source_code.gsub!(/\r\n?/, "\n")
     source_code.each_line do |code|
       line_num = line_num + 1
-      if !code_line_number.values.include? line_number
+      if !code_line_number.values.include? line_num
         if unused_source_code.has_key?(file)
           value = unused_source_code[file]
           value[line_num] = code
@@ -124,7 +119,7 @@ def unused_code(table)
       end
     end
   end
-  return unused_source_code
+  return [new_lookup_table, unused_source_code]
 end
 #File.readlines('ASSEMBLY').each do |line|
 #  new_loopup_table.each do |key, value|
