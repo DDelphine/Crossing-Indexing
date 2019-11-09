@@ -3,8 +3,6 @@
 #the second returned table is unused_source_code, which stores all the source code that has no corresponding assembly code, e.g., comments
 def readdwarf(dwarf_file)
   lookup_table = {}
-  #new_lookup_table {file_1: {0x0001=>first source code line, [0x0002, 0x0003]=>second source code line}
-  #                  file_2: {0x0006=>first source code line, [0x0008, 0x0009]=>second source code line}} 
   new_lookup_table = {}
   #file_indexes stores the file indexes, e.g., the index of test.c is 1, so we store 1 into this array 
   file_indexes = []
@@ -46,6 +44,10 @@ end
 #this part processes the lookup_table which is generated from the previous part, replaces the line_number by the source code in the corresponding source file. If multiple assembly code lines refer to the same source code line, then grouping all the assembly code lines together to form a new key, and the value is the source code line. 
 #e.g., lookup_table {file_1: {0x0001=>1, 0x0002=>2, 0x0003=>2}}
 #      new_lookup_table {file_1: {0x0001=>first source code line, [0x0002, 0x0003]=>second source code line}} 
+#so new_lookup_table finally looks like
+#      {file_1: {0x0001=>first source code line, [0x0002, 0x0003]=>second source code line}
+#       file_2: {0x0006=>first source code line, [0x0008, 0x0009]=>second source code line}
+#       ...} 
 lookup_table.each do |key, value|
   #puts "#{key}: #{value}"
   new_value = {}
