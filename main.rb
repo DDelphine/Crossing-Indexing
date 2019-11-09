@@ -1,18 +1,20 @@
-#this part generates a lookup_table
-#lookup_table stores {file_1: {assembly_addr_1=>source_code_line_1, assembly_addr_2=>source_code_line_2 ...}
-#                     file_2: {assembly_addr_1=>source_code_line_1, assembly_addr_2=>source_code_line_2... }
-# 
-#
-#                    ......}
-#
+#this function read the llvm-dwarfdump output and analyze it, then return two tables.
+#the first returned table is new_lookup_table, which stores the source code file name, their assembly address and corresponding source code
+#the second returned table is unused_source_code, which stores all the source code that has no corresponding assembly code, e.g., comments
 def readdwarf(dwarf_file)
+  lookup_table = {}
+  #new_lookup_table {file_1: {0x0001=>first source code line, [0x0002, 0x0003]=>second source code line}
+  #                  file_2: {0x0006=>first source code line, [0x0008, 0x0009]=>second source code line}} 
   new_lookup_table = {}
-#lookup_table = {}
-file_indexes = []
-file_names = []
-flag = false
-lookup_table = {}
-dwarf_file.each_line do |line|
+  #file_indexes stores the file indexes, e.g., the index of test.c is 1, so we store 1 into this array 
+  file_indexes = []
+  #file_names stores the file names, e.g., we store the "test.c" into this array
+  file_names = []
+  #this part initializes the lookup_table, which finally looks like 
+  #.   {file_1: {assembly_addr_1=>line_number_1, assembly_addr_2=>line_number_2 ...}
+  #     file_2: {assembly_addr_1=>line_number_1, assembly_addr_2=>line_number_2... }
+  #     .....}
+  dwarf_file.each_line do |line|
     if flag == false
       if line.match(/file_names/)
         file_index = line.scan(/\d/).join('').to_s
@@ -44,7 +46,6 @@ end
 #this part processes the lookup_table which is generated from the previous part, replaces the line_number by the source code in the corresponding source file. If multiple assembly code lines refer to the same source code line, then grouping all the assembly code lines together to form a new key, and the value is the source code line. 
 #e.g., lookup_table {file_1: {0x0001=>1, 0x0002=>2, 0x0003=>2}}
 #      new_lookup_table {file_1: {0x0001=>first source code line, [0x0002, 0x0003]=>second source code line}} 
-#new_lookup_table = {}
 lookup_table.each do |key, value|
   #puts "#{key}: #{value}"
   new_value = {}
